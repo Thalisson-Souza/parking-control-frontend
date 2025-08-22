@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { parkingService } from "../services/api";
+import AddParking from "./AddParking";
 
 export default function ParkingList() {
   const [parkings, setParking] = useState([]);
@@ -61,6 +62,10 @@ export default function ParkingList() {
             ))}
           </tbody>
         </table>
+
+        <div className="w-80 rounded-lg shadow-md">
+          <AddParking />
+        </div>
       </div>
     </div>
   );

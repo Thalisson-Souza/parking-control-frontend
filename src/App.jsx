@@ -13,9 +13,17 @@ function App() {
             <li>
               <button
                 className="w-full py-2 px-4 rounded-lg border border-sky-700 bg-sky-600
-               text-white  hover:bg-sky-700 transition-colors"
+                text-white  hover:bg-sky-700 transition-colors shadow-2xl"
               >
                 Estacionamentos
+              </button>
+            </li>
+            <li>
+              <button
+                className="w-full py-2 px-4 rounded-lg border border-sky-700 bg-sky-600
+                text-white  hover:bg-sky-700 transition-colors shadow-2xl"
+              >
+                Adicionar estacionamento
               </button>
             </li>
           </ul>
