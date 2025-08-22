@@ -16,35 +16,52 @@ export default function ParkingList() {
   }, []);
 
   return (
-    <div>
-      <table>
-        <thead>
-          <tr>
-            <th>parkingSpotNumber</th>
-            <th>Responsável</th>
-            <th>Bloco</th>
-            <th>Carro</th>
-            <th>Placa do carro</th>
-            <th>Modelo do carro</th>
-            <th>Cor do carro</th>
-            <th>Placa</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          {parkings.map((p) => (
-            <tr key={p.parkingSpotNumber}>
-              <td>{p.responsibleName}</td>
-              <td>{p.parkingSpotNumber}</td>
-              <td>{p.block}</td>
-              <td>{p.car.plateCar}</td>
-              <td>{p.car.modelCar}</td>
-              <td>{p.car.colorCar}</td>
-              <td>{p.status}</td>
+    <div className="w-full p-6">
+      <div>
+        <h1 className="text-3xl text-black font-extrabold text-center mb-6">
+          Estacionamentos
+        </h1>
+      </div>
+
+      <div className="overflow-x-auto">
+        <table className="min-w-full border-separate border-spacing-0 shadow-md rounded-lg table-fixed border border-gray-200 overflow-hidden">
+          <thead className="bg-sky-900 text-white">
+            <tr>
+              <th className="px-4 py-2 border-b">Responsável</th>
+              <th className="px-4 py-2 border-b">Número vaga</th>
+              <th className="px-4 py-2 border-b">Bloco</th>
+              <th className="px-4 py-2 border-b">Placa carro</th>
+              <th className="px-4 py-2 border-b">Modelo carro</th>
+              <th className="px-4 py-2 border-b">Cor carro</th>
+              <th className="px-4 py-2 border-b">Status</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+
+          <tbody>
+            {parkings.map((p) => (
+              <tr key={p.parkingSpotNumber} className="hover:bg-gray-50">
+                <td className="px-4 py-2 border-b text-center">
+                  {p.responsibleName}
+                </td>
+                <td className="px-4 py-2 border-b text-center">
+                  {p.parkingSpotNumber}
+                </td>
+                <td className="px-4 py-2 border-b text-center">{p.block}</td>
+                <td className="px-4 py-2 border-b text-center">
+                  {p.car.plateCar}
+                </td>
+                <td className="px-4 py-2 border-b text-center">
+                  {p.car.modelCar}
+                </td>
+                <td className="px-4 py-2 border-b text-center">
+                  {p.car.colorCar}
+                </td>
+                <td className="px-4 py-2 border-b text-center">{p.status}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
